@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const URL = "https://www.googleapis.com/books/v1/volumes?q=";
-const KEY = process.env.BOOKS_API_KEY;
+const KEY = process.env.REACT_APP_BOOKS_API_KEY;
 
 export default {
   search: input => axios.get(`${URL}${input}&key=${KEY}`),
