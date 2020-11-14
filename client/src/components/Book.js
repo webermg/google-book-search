@@ -41,7 +41,7 @@ export default function Book(props) {
         </div>
           <div className="col-md-1">
           <a className="btn btn-primary btn-block" target="blank" href={props.info.infoLink} role="button">View</a>
-          {location.pathname==="/search" && <button type="button" className="btn btn-success btn-block" onClick={saveBtnClick}>Save</button>}
+          {(location.pathname==="/search" || location.pathname==="/") && <button type="button" className="btn btn-success btn-block" onClick={saveBtnClick}>Save</button>}
           {location.pathname==="/saved" && <button type="button" className="btn btn-danger btn-block" onClick={() => props.onDelete(props.info._id)}>Delete</button>}
           </div>
       </div>
