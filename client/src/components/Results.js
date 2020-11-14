@@ -6,8 +6,9 @@ export default function Results(props) {
   return props.books ? (
     <div className='col-12 mt-3 d-flex flex-column results'>
       {props.books.map(book => (<Book 
-        key={book.id}
-        info={book.volumeInfo}
+        key={book.id || book._id}
+        info={book.volumeInfo ? book.volumeInfo : book}
+        onDelete={props.onDelete}
         />))}
     </div>
   ) :

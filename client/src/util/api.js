@@ -5,7 +5,7 @@ const KEY = process.env.BOOKS_API_KEY || 'AIzaSyC18K0K74Mq0XD7WQ4inBoIpHEzVaEL_W
 
 export default {
   search: input => axios.get(`${URL}${input}&key=${KEY}`),
-  get: () => axios.get(`/api/books`),
-  add: () => axios.post(`/api/books`),
+  getAll: () => axios.get(`/api/books`),
+  add: (book) => axios.post(`/api/books`, book),
   delete: id => axios.delete(`/api/books/${id}`)
 }

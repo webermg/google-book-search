@@ -3,10 +3,12 @@ const Schema = mongoose.Schema;
 
 const bookSchema = new Schema({
   title: { type: String, required: true },
-  authors: { type: String, required: true },
+  authors: { type: Array, required: true },
   description: String,
   image: String,
-  link: String,
+  infoLink: String,
+  publisher: String,
+  publishedDate: String,
   date: { type: Date, default: Date.now }
 });
 

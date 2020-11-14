@@ -29,14 +29,8 @@ export default function Search() {
     })
   }
 
-  // const searchBtnClick = () => {
-  //   api.search(input.search).then(res=>{
-  //     setResults(res.data.items);
-  //   })
-  // }
-
   return (
-    <div className="container">
+    <div className="container mt-3">
       <Header/>
       <SearchForm value={input} onChange={searchFormChange} onSubmit={submitForm}/>
       <Results books={results}/>
