@@ -1,9 +1,15 @@
 import React from 'react'
+import {useLocation} from 'react-router-dom'
 
 export default function Book(props) {
+  const location = useLocation();
 
   const saveBtnClick = () => {
     console.log("saved")
+  }
+  
+  const delBtnClick = () => {
+    console.log("deleted")
   }
 
   return (
@@ -13,7 +19,8 @@ export default function Book(props) {
           <img src={props.info.imageLinks.thumbnail} className="card-img" alt="..." />
         </div>
         <div className="col-md-10">
-          <button type="button" className="btn btn-success float-right" onClick={saveBtnClick}>Save</button>
+          {location.pathname==="/search" && <button type="button" className="btn btn-success float-right" onClick={saveBtnClick}>Save</button>}
+          {location.pathname==="/saved" && <button type="button" className="btn btn-danger float-right" onClick={saveBtnClick}>Delete</button>}
           <a className="btn btn-primary float-right" target="blank" href={props.info.infoLink} role="button">View</a>
           <div className="card-body">
             <h5 className="card-title">{props.info.title}</h5>
