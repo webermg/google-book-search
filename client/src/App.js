@@ -1,19 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Navbar from './components/Navbar'
+import Search from './components/pages/Search'
+import Saved from './components/pages/Saved'
 
 function App() {
   return (
-    <div className="App">
+    
       <Router>
-        <Switch>
-          <Header/>
-          <Route path="/search" component={Search}/>
-          <Route path="/saved" component={Saved}/>
-          <Route path="/" component={Search}/>
-        </Switch>
+        <div className="App">
+          <Navbar/>
+          <Switch>
+            <Route path={'/',"/search"}><Search/></Route>
+            <Route path="/saved" component={Saved}/>
+          </Switch>
+        </div>
       </Router>
-    </div>
+    
   );
 }
 
